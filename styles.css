@@ -36,7 +36,7 @@ header{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -348,14 +348,51 @@ a img {
 }
 
 
+.mapa{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242424;
+    margin: 0 auto;
+    padding: 5rem;
+    gap: 10rem;
+}
+
+.mapa iframe{
+    height: 100%;
+    width: 50%;
+    border: 4px solid #ccf158;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px #ccf158,
+                0 5px 15px #ccf158,
+                0 5px 20px #ccf158;
 
 
+}
 
 
+.mapa-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 50%;
+}
 
+.mapa-text h1{
+    font-family: 'Dela Gothic One';
+    font-size: 4rem;
+    color: #ccf158;
+}
 
-
-
+.mapa-text p{
+    font-size: 1.5rem;
+    color: #fff;
+   
+}
 
 
 
@@ -418,7 +455,7 @@ label{
         align-items: center;
         height: 0;
         gap: 0;
-        z-index: 1;
+        z-index: 1000;
         overflow: hidden;
         transition: all 0.4s;
 
