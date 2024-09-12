@@ -146,14 +146,16 @@ a img {
 .hero {
     height: 93vh; /* Full screen height */
     width: 100%;
-    background: url('./images/hero.png') no-repeat center center/cover; /* Replace 'your-image-path.jpg' with your image path */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: url('./images/hero.png');
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -259,7 +261,7 @@ label{
 
     nav{
         padding: 0;
-        position: absolute;
+        position: fixed;
         top: 90px;
         background-color: transparent;
         left: 0;
@@ -274,11 +276,12 @@ label{
         z-index: 1;
         overflow: hidden;
         transition: all 0.4s;
+
     }
 
     input.hamburger:checked + header nav{
         background-color: #242424;
-        height: 100vh;
+        height: calc(100vh - 80px);
     }
 
     header{
@@ -287,20 +290,21 @@ label{
     }
 
     input.hamburger:checked + header{
+        position: fixed;
         background-color: #242424;
     }
 
-
-    nav a:nth-child(1){
-        margin-top: 70px;
-    }
-
     nav a{
+        font-family: 'Dela Gothic One';
         text-align: center;
         width: 100%;
         font-size: 4rem;
         padding: 1rem 0;
         transition: all 0.2s;
+    }
+
+    nav a:nth-child(1){
+        margin-top: 15vh;
     }
 
     nav a:active{
@@ -309,10 +313,12 @@ label{
     }
 
     nav a.active::after {
-        width: 0%;
+        width: 40%;
+        transform: translateX(75%);
     }
     
     label{
+        cursor: pointer;
         display: block;
         height: 30px;
         width: 45px;
@@ -330,14 +336,30 @@ label{
 
     label div:nth-child(1){
         top: 0;
+        transition: all 0.4s;
     }
     label div:nth-child(2){
         top: 50%;
+        transition: all 0.4s;
     }
     label div:nth-child(3){
         top: 100%;
+        transition: all 0.4s;
     }
 
+    input.hamburger:checked + header label div:nth-child(1){
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    input.hamburger:checked + header label div:nth-child(2){
+        opacity: 0;
+    }
+
+    input.hamburger:checked + header label div:nth-child(3){
+        top: 50%;
+        transform: rotate(-45deg);
+    }
 
 
 
