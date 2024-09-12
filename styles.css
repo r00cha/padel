@@ -93,8 +93,8 @@ nav a.active::after {
 }
 
 .social-logo-face{
-    height: 40px;
-    width: 40px;
+    height: 33px;
+    width: 33px;
 }
 
 .social-logo-insta{
@@ -146,7 +146,7 @@ a img {
 .hero {
     height: 93vh; /* Full screen height */
     width: 100%;
-    background: url('./images/hero.jpg') no-repeat center center/cover; /* Replace 'your-image-path.jpg' with your image path */
+    background: url('./images/hero.png') no-repeat center center/cover; /* Replace 'your-image-path.jpg' with your image path */
     display: flex;
     justify-content: center;
     align-items: center;
