@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* For Webkit Browsers (Chrome, Safari, etc.) */
@@ -20,6 +21,7 @@
 
 /* For Firefox */
 body {
+    background-color: #000;
     scrollbar-width: none; /* Firefox 64 and later */
     scrollbar-color: transparent transparent; /* Set scrollbar color to transparent */
 }
@@ -130,18 +132,6 @@ a img {
 }
 
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
 /* Hero section styling */
 .hero {
     height: 93vh; /* Full screen height */
@@ -224,10 +214,153 @@ a img {
 
 }
 
+/* ------------------------- About section styling ------------------------ */
 
 .about{
-    height: 100vh;
+    height: 80vh;
+    background-color: #000;
 }
+
+.about .content {
+    max-width: 1800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+    height: 50rem;
+}
+
+.about > .content > h1 {
+    font-family: 'Dela Gothic One';
+    font-size: 4rem;
+    color: #fff;
+    align-self: baseline;
+    margin-left: 10rem;
+    }
+
+
+.about .cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about .card {
+    height: 25rem;
+    width: 25rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #242424;
+    color: #fff;
+    padding: 1rem;
+    border: solid 1px #ccf158;
+    box-shadow: 0 5px 10px #ccf158;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.about .card .bola{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    transition: all 0.3s;
+
+}
+
+.about .card .raquete{
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    z-index: 1;
+    transition: all 0.3s;
+
+}
+
+.about .card .shoes{
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: rotate(20deg);
+    transition: all 0.3s;
+}
+
+
+.about .card:hover .bola{
+    transform: scale(1.1) rotate(10deg) translateY(-2%);
+}
+
+.about .card:hover .raquete{
+    transform: scale(1.1) translateX(5%) rotate(-15deg);
+}
+
+.about .card:hover .shoes{
+    transform:rotate(10deg) translateY(-10%) translateX(-10%);
+}
+
+
+
+.about .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px #ccf158;
+    filter: brightness(1.1);
+}
+
+
+
+.about .card i{
+    color: #ccf158;
+    font-size: 4rem;
+}
+
+.about .card h2{
+    margin-top: 5rem;
+    color: #fff;
+    font-size: 3rem;
+    font-family: 'Dela Gothic One';
+}
+
+.about .card p{
+    color: #949494;
+    font-size: 1.5rem;
+    text-align: left;
+    z-index: 2;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @keyframes marquee {
@@ -236,6 +369,18 @@ a img {
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
     }
 }
 
