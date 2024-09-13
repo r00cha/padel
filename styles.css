@@ -453,10 +453,39 @@ a img {
 .mapa-text p{
     font-size: 1.5rem;
     color: #fff;
-   
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;  
 }
 
+.mapa-text p i{
+    font-size: 2rem;
+    color: #ccf158;
+}
 
+.mapa-text p a{
+    padding: 0.5rem;
+    color: #ccf158;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.mapa-text p a:hover{
+    color: #000;
+    background-color: #ccf158;
+}
+
+.mapa-text p a:hover i{
+    color: #000;
+    background-color: #ccf158;
+}
 
 
 @keyframes marquee {

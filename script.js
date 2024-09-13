@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 observer.unobserve(entry.target); // Stop observing once animation has started
             }
         });
-    }, { threshold: 0.4 }); // Trigger when 10% of the .about section is visible
+    }, { threshold: 0.3 }); // Trigger when 10% of the .about section is visible
 
     // Start observing the .about section
     observer.observe(aboutSection);
