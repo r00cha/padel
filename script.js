@@ -1,16 +1,49 @@
-// Function to toggle 'active' class on clicked nav links
 document.addEventListener('DOMContentLoaded', function () {
-    // Select all <a> elements within the <nav>
+    // Part 1: Toggle 'active' class on clicked nav links
     const navLinks = document.querySelectorAll('nav a');
 
-    // Add click event listener to each <a> element
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
-            // Remove 'active' class from all <a> elements
             navLinks.forEach(navLink => navLink.classList.remove('active'));
-            
-            // Add 'active' class to the clicked <a> element
             this.classList.add('active');
         });
     });
+
+    // Part 2: Hero section text fade-in animation
+    const heroTitle = document.querySelector('.hero-content h1');
+    const heroText = document.querySelector('.hero-content p');
+    const heroButton = document.querySelector('.hero-content .hero-button');
+
+    setTimeout(() => {
+        heroTitle.classList.add('animate');
+    }, 900); // Delay for H1
+
+    setTimeout(() => {
+        heroText.classList.add('animate');
+    }, 1600); // Delay for P
+
+    setTimeout(() => {
+        heroButton.classList.add('animate');
+    }, 2200); // Delay for Button
+
+    // Part 3: Cards fade-in animation when .about section comes into view
+    const aboutSection = document.querySelector('.about'); // Select the .about section
+    const cards = document.querySelectorAll('.about .card'); // Select all cards within .about
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // When the .about section comes into view, animate the cards
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('fade-in-left');
+                    }, 300 * (index + 1)); // Delay for each card based on its index
+                });
+                observer.unobserve(entry.target); // Stop observing once animation has started
+            }
+        });
+    }, { threshold: 0.4 }); // Trigger when 10% of the .about section is visible
+
+    // Start observing the .about section
+    observer.observe(aboutSection);
 });
