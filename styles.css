@@ -462,9 +462,13 @@ a img {
 .mapa-text p i{
     font-size: 2rem;
     color: #ccf158;
+    background-color: #242424;
+    transition: all 0.2s ease;
 }
 
 .mapa-text p a{
+    background-color: #242424;
+    color: #ccf158;
     padding: 0.5rem;
     color: #ccf158;
     text-decoration: none;
@@ -475,6 +479,7 @@ a img {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
+    transition: all 0.2s ease;
 }
 
 .mapa-text p a:hover{
