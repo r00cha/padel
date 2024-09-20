@@ -10,22 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Part 2: Hero section text fade-in animation
-    const heroTitle = document.querySelector('.hero-content h1');
-    const heroText = document.querySelector('.hero-content p');
-    const heroButton = document.querySelector('.hero-content .hero-button');
-
-    setTimeout(() => {
-        heroTitle.classList.add('animate');
-    }, 900); // Delay for H1
-
-    setTimeout(() => {
-        heroText.classList.add('animate');
-    }, 1600); // Delay for P
-
-    setTimeout(() => {
-        heroButton.classList.add('animate');
-    }, 2200); // Delay for Button
-
+    window.onload = function () {
+        // Wait for the entire page to finish loading
+        const preloader = document.getElementById('preloader');
+        
+        // Hide the preloader
+        preloader.style.display = 'none';
+    
+        // Existing hero content fade-in animation code (if any) can go here
+        const heroTitle = document.querySelector('.hero-content h1');
+        const heroText = document.querySelector('.hero-content p');
+        const heroButton = document.querySelector('.hero-content .hero-button');
+    
+        setTimeout(() => {
+            heroTitle.classList.add('animate');
+        }, 300); // Delay for H1
+    
+        setTimeout(() => {
+            heroText.classList.add('animate');
+        }, 900); // Delay for P
+    
+        setTimeout(() => {
+            heroButton.classList.add('animate');
+        }, 1500); // Delay for Button
+    };
+    
     // Part 3: Cards fade-in animation when .about section comes into view
     const aboutSection = document.querySelector('.about'); // Select the .about section
     const cards = document.querySelectorAll('.about .card'); // Select all cards within .about
